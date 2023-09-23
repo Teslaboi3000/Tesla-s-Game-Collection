@@ -55,7 +55,7 @@ word_to_guess = random.choice(words)
 revealed_word = [word_to_guess[0]] + ["_"] * (len(word_to_guess) - 2) + [word_to_guess[-1]]
 lives = 5
 
-print("Welcome to my Hangman game!\nLet's play!\n")
+print("Welcome to my Hangman game! Write exit to stop playing.\nLet's play!\n")
 
 while True: 
     print(f'{len(word_to_guess)} letters')
@@ -66,6 +66,8 @@ while True:
         word_to_guess = random.choice(words)
         revealed_word = [word_to_guess[0]] + ["_"] * (len(word_to_guess) - 2) + [word_to_guess[-1]]
         lives = 5
+    elif guess == 'exit':
+        exit()
     else:
         lives -= 1
         if lives > 0:
